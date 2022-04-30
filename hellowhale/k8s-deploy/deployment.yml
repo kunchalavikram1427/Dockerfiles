@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hellowhale-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hellowhale
+  template:
+    metadata:
+      name: hellowhale
+      labels:
+        app: hellowhale
+    spec:
+      containers:
+      - name: hellowhale-container
+        image: kunchalavikram/hellowhale:latest
+        ports:
+        - containerPort: 80
