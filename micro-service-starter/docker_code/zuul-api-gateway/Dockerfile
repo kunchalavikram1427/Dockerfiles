@@ -1,4 +1,4 @@
-FROM maven:3.6.3-jdk-8  AS MAVEN_BUILD 
+FROM maven AS MAVEN_BUILD 
 WORKDIR /app
 COPY . .
 RUN mvn clean package 
