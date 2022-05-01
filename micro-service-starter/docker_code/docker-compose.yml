@@ -63,7 +63,7 @@ services:
       dockerfile: Dockerfile
     image: kunchalavikram/ms-wishlist:1.0
     ports:
-      - "5000:5000"
+      - "1003:5000"
     networks:
       - my_net
 

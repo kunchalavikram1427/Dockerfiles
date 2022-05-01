@@ -13,7 +13,7 @@ def hello():
    x = {
     "1": "Apple Iphone",
     "2": "MacBook",
-    "3": "Your Fav Something else"
+    "3": "Airpods"
    }
    y = json.dumps(x)
    return y
@@ -35,4 +35,4 @@ def product(product):
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0')
-    print('Wishlist Microservice Started...')
+    print('Wishlist Microservice Started on default port 5000...')
