@@ -1,8 +1,10 @@
 # select parent image 
 FROM maven:3.6.3-jdk-8 
 
+WORKDIR /app
+
 # copy the source tree and the pom.xml to our new container 
-COPY ./ ./  
+COPY . .
 
 # package our application code 
 RUN mvn clean package 
