@@ -1,5 +1,5 @@
 Build Image:
-docker build . -t <your username>/node-web-app
+docker build . -t node-web-app:1.0
 
 Run the Image:
-docker run -p 8080:8080 -d <your username>/node-web-app
+docker run -p 8080:8080 -d node-web-app:1.0
