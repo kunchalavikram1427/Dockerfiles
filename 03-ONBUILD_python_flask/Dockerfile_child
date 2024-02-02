@@ -1,0 +1,3 @@
+# Child image
+FROM parent:latest
+CMD ["python", "app.py"]
