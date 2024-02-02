@@ -6,5 +6,6 @@ RUN mvn clean package
 FROM openjdk:8-jre-alpine3.9
 WORKDIR /app
 COPY --from=BUILD /app/target/demo-0.0.1-SNAPSHOT.jar .
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/app/demo-0.0.1-SNAPSHOT.jar"]
 
