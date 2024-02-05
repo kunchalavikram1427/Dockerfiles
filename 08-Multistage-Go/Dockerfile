@@ -1,8 +1,12 @@
-FROM golang:1.16-alpine
+FROM golang:1.16-alpine as BUILD
 WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
-COPY *.go ./
-RUN go build -o /docker-gs-ping
+COPY . .
+RUN go build -o /bin/hello
+
+FROM scratch
+WORKDIR /
+COPY --from=BUILD /bin/hello /bin/hello
 EXPOSE 8080
-CMD [ "/docker-gs-ping" ]
+CMD [ "/bin/hello" ]
