@@ -5,7 +5,7 @@ RUN go mod download
 COPY *.go ./
 RUN go build -o /docker-gs-ping
 
-FROM gcr.io/distroless/base-debian10
+FROM gcr.io/distroless/base-debian12
 WORKDIR /
 COPY --from=build /docker-gs-ping /docker-gs-ping
 EXPOSE 8080
