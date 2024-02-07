@@ -1,0 +1,8 @@
+.devcontainer/
+.github/
+.mvn/
+gradle/
+.gitignore
+mvn*
+settings*
+gradle*
