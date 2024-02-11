@@ -1,18 +1,20 @@
 services:
   web:
+    container_name: web
     build: .
     ports:
-      - "5000:5000"
+        - "5000:5000"
     depends_on: ["mysql"]
     environment:
-      DATABASE_URI: "admin123"
-      MYSQL_DATABASE: "mysql+pymysql://root:admin123@mysql:3306/todo"
+      DATABASE_URI: "mysql+pymysql://root:admin123@mysql:3306/todo"
+      INTIAL_DELAY: "20"
   mysql:
+    container_name: mysql
     image: "mysql:5.7"
     ports:
-      - "3306"
+    - "3306"
     environment:
       MYSQL_ROOT_PASSWORD: "admin123"
       MYSQL_DATABASE: "todo"
     volumes:
-    - "./init.sql:/docker-entrypoint-initdb.d/"
+    - "./init.sql:/docker-entrypoint-initdb.d/init.sql"

@@ -9,6 +9,10 @@ app = Flask(__name__)
 
 # Change Database URI
 database_uri = os.getenv('DATABASE_URI', 'sqlite:///db.sqlite')
+INTIAL_DELAY = int(os.getenv('INTIAL_DELAY', '20'))
+
+print(f'Waiting for the app to start')
+time.sleep(INTIAL_DELAY)
 
 # App initialization
 app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
@@ -25,7 +29,8 @@ class Todo(db.Model):
     complete = db.Column(db.Boolean)
 
 # Create initial table
-db.create_all()
+with app.app_context():
+    db.create_all()
 
 # Health/details Route
 @app.route("/details")
