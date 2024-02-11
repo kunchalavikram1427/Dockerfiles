@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # Change Database URI
 database_uri = os.getenv('DATABASE_URI', 'sqlite:///db.sqlite')
-INTIAL_DELAY = int(os.getenv('INTIAL_DELAY', '20'))
+INTIAL_DELAY = int(os.getenv('INTIAL_DELAY', '5'))
 
 print(f'Waiting for the app to start')
 time.sleep(INTIAL_DELAY)

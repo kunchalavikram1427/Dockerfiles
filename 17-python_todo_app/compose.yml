@@ -7,7 +7,7 @@ services:
     depends_on: ["mysql"]
     environment:
       DATABASE_URI: "mysql+pymysql://root:admin123@mysql:3306/todo"
-      INTIAL_DELAY: "20"
+      INTIAL_DELAY: "10"
   mysql:
     container_name: mysql
     image: "mysql:5.7"
