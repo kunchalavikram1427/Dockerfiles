@@ -1,0 +1,6 @@
+kubernetes/
+*.sqlite
+**/*.md
+.vscode/
+demo/
+.gitignore
