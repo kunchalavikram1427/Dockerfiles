@@ -5,11 +5,14 @@ import time
 import datetime
 import socket
 
+INTIAL_DELAY = int(os.getenv('INTIAL_DELAY', '5'))
+print(f'Waiting for the app to start')
+time.sleep(INTIAL_DELAY)
+
 app = Flask(__name__)
 
 # Change Database URI
 database_uri = os.getenv('DATABASE_URI', 'sqlite:///db.sqlite')
-INTIAL_DELAY = int(os.getenv('INTIAL_DELAY', '5'))
 
 # App initialization
 app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
@@ -81,7 +84,5 @@ def delete(todo_id):
 
 # Start the flask server
 if __name__ == "__main__":
-    print(f'Waiting for the app to start')
-    time.sleep(INTIAL_DELAY)
     app.run(host="0.0.0.0", port=5000, debug=True)
 	
