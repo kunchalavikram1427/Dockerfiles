@@ -5,10 +5,6 @@ import time
 import datetime
 import socket
 
-INTIAL_DELAY = int(os.getenv('INTIAL_DELAY', '5'))
-print(f'Waiting for the app to start')
-time.sleep(INTIAL_DELAY)
-
 app = Flask(__name__)
 
 # Change Database URI

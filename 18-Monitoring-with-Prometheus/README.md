@@ -1,5 +1,6 @@
 https://docs.docker.com/config/daemon/prometheus/
 https://github.com/docker/awesome-compose/tree/master/prometheus-
+https://opensource.com/article/19/11/introduction-monitoring-prometheus
 
 
 cat /etc/docker/daemon.json

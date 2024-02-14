@@ -7,6 +7,11 @@ Read the [Docker Scout Quickstart](https://docs.docker.com/scout/quickstart) for
 ```shell
 docker build -t scout-demo:v1 .
 docker run scout-demo:v1
+docker scout policy \
+  --org <ORG-NAME> \
+  --platform linux/amd64 \
+  <IMAGE-NAME>:<TAG>
+docker buildx build --provenance=true --sbom=true -t <IMAGE> --push .
 ```
 
 The application consists of a basic ExpressJS server and uses an intentionally old version of Express and Alpine base image.
